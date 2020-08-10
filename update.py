@@ -20,7 +20,7 @@ def update(NationalCode, CustomerName):
 
         # Update single record now
 
-        pg_update = """update public "Customer" set "CustomerName"=%s WHERE "NotionalCode"=%s """
+        pg_update = """update public. "Customer" set "CustomerName"=%s WHERE "NotionalCode"=%s """
         cursor.execute(pg_update, (CustomerName,NationalCode))
         connection.commit()
         count = cursor.rowcount
@@ -30,7 +30,7 @@ def update(NationalCode, CustomerName):
 
 
         print("Customer Table After updating record ")
-        pg_select = """select * from public "Customer" where "NationalCode"= %s"""
+        pg_select = """select * from public. "Customer" where "NationalCode"= %s"""
         cursor.execute(pg_select, (NationalCode,))
         Customer_record = cursor.fetchone()
         print(Customer_record)
