@@ -11,7 +11,7 @@ def select():
         )
 
         cursor = connection.cursor()
-        pg_select = """SELECT * FROM public."Customer"""
+        pg_select = """SELECT * FROM public."Customer" """
         cursor.execute(pg_select)
 
         print(" selected rows from book table ")
