@@ -13,14 +13,14 @@ def update(NationalCode, CustomerName):
         cursor = connection.cursor()
 
         print(" Customer Table Before updating ")
-        pg_select = """SELECT * FROM public."Customer" WHERE "NotionalCode" = %s """
+        pg_select = """SELECT * FROM public."Customer" WHERE "NationalCode" = %s """
         cursor.execute(pg_select, (NationalCode, ))
         book_record = cursor.fetchall()
         print(book_record)
 
         # Update single record now
 
-        pg_update = """update public. "Customer" set "CustomerName"=%s WHERE "NotionalCode"=%s """
+        pg_update = """update public. "Customer" set "CustomerName"=%s WHERE "NationalCode"=%s """
         cursor.execute(pg_update, (CustomerName,NationalCode))
         connection.commit()
         count = cursor.rowcount
